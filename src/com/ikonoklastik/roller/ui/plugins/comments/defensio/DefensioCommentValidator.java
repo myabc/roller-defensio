@@ -1,4 +1,4 @@
-package com.ui.ikonoklastik.roller.ui.plugins.comments.defensio;
+package com.ikonoklastik.roller.ui.plugins.comments.defensio;
 
 import com.defensio.DefensioWrapper;
 import com.defensio.exceptions.DefensioException;
@@ -17,9 +17,9 @@ import org.apache.roller.weblogger.util.RollerMessages;
  *
  * @author alexbcoles
  */
-public class DefensioPlugin implements CommentValidator {
+public class DefensioCommentValidator implements CommentValidator {
 
-    private static final Log log = LogFactory.getLog(DefensioPlugin.class);
+    private static final Log log = LogFactory.getLog(DefensioCommentValidator.class);
 
     public static final String NAME = "Defensio";
     public static final String API_VERSION = "1.2";
@@ -27,7 +27,7 @@ public class DefensioPlugin implements CommentValidator {
     private DefensioWrapper defensio = new DefensioWrapper();
     private String apiKey;
 
-    public DefensioPlugin() {
+    public DefensioCommentValidator() {
         apiKey = WebloggerConfig.getProperty("comment.validator.defensio.apikey");
     }
 
